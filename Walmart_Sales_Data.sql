@@ -70,9 +70,7 @@ SET
 -- ----------------------------------------------------------------------------
 
 
-
-
-
+-- How many unique cities does the data have?
 
 SELECT DISTINCT
     city
@@ -92,6 +90,8 @@ FROM
 
 -- ----------------------------------------------------------------------
 -- ------------------------------Product---------------------------------
+
+-- How many unique product lines does the data have?
 
 SELECT 
     COUNT(DISTINCT product_line)
@@ -154,11 +154,8 @@ FROM
 GROUP BY product_line
 ORDER BY avg_tax DESC;
 
--- Fetch each product line and add a column to those product line showing "Good", "Bad". Good if its greater than average sales
 
-
-
-
+-- Which branch sold more products than average product sold?
 SELECT 
     branch, SUM(quantity) AS qty
 FROM
@@ -187,6 +184,8 @@ ORDER BY avg_rating DESC;
 
 -- ------------------------------------------------------------------------------
 -- ------------------------------Sales-------------------------------------------
+
+-- Number of sales made in each time of the day per weekday
 
 SELECT 
     time_of_day, COUNT(*) AS total_sales
@@ -223,6 +222,8 @@ ORDER BY VAT DESC;
 
 -- ---------------------------------------------------------------------------
 -- ---------------------------------Customer----------------------------------
+
+-- How many unique customer types does the data have?
 
 SELECT 
     COUNT(DISTINCT customer_type) AS customer_type_count
